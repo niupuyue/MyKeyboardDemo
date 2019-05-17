@@ -12,9 +12,11 @@ import android.widget.LinearLayout;
  * Desc:
  * Version:
  */
-public class MyChatKeyboardView extends LinearLayout {
+public class MyChatKeyboardView extends LinearLayout implements CloseChatKeyboardListener {
 
     private Context mContext;
+
+    private CloseChatKeyboardListener mCloseChatKeyboardListener;
 
     public MyChatKeyboardView(Context context) {
         super(context);
@@ -28,6 +30,13 @@ public class MyChatKeyboardView extends LinearLayout {
         super(context, attrs, defStyleAttr);
     }
 
+    /**
+     * 关闭键盘扩展内容
+     */
+    @Override
+    public void closeKeyboard() {
+
+    }
 
 
 }
