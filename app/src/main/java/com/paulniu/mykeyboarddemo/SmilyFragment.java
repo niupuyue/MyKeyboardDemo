@@ -56,11 +56,21 @@ public class SmilyFragment extends Fragment {
     }
 
     private void initLayoutById(View root) {
-        if (root != null){
+        if (root != null) {
             vpfsEmojiContanier = root.findViewById(R.id.vpfsEmojiContanier);
         }
     }
 
+    /**
+     * 设置表情点击事件
+     */
+    public void setOnEmojiClickListener(OnEmojiClickListener listener) {
+        this.listener = listener;
+    }
+
+    /**
+     * 获取所有的表情图像
+     */
     private void initEmojiDataAfterInitView() {
         emojiList = new ArrayList<>();
         for (String emojiName : EmojiUtil.getEmojiMap(emoticonType).keySet()) {

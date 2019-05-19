@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity implements MyChatKeyboardCli
         setContentView(R.layout.activity_main);
         scroll = findViewById(R.id.scroll);
         chatkeyboard = findViewById(R.id.chatkeyboard);
-        chatkeyboard.setData(this, this,scroll);
-        chatkeyboard.setSmilyFragment(SmilyFragment.getInstance());
+        chatkeyboard.setData(this, this, scroll);
+        chatkeyboard.setSmilyFragment(SmilyFragment.getInstance(SmilyFragment.RECYCLER_VIEW_SPAN_COUNT));
         chatkeyboard.setExpandFragment(ExpandFragment.getInstance());
     }
 
