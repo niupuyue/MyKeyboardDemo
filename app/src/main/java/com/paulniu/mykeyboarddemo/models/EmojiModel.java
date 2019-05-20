@@ -1,4 +1,7 @@
-package com.paulniu.mykeyboarddemo;
+package com.paulniu.mykeyboarddemo.models;
+
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * Coder: niupuyue (牛谱乐)

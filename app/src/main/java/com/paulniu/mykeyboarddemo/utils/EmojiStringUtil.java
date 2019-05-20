@@ -1,4 +1,4 @@
-package com.paulniu.mykeyboarddemo;
+package com.paulniu.mykeyboarddemo.utils;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -8,6 +8,8 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ImageSpan;
 import android.widget.TextView;
+
+import com.paulniu.mykeyboarddemo.utils.EmojiUtil;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,6 +23,15 @@ import java.util.regex.Pattern;
  */
 public class EmojiStringUtil {
 
+    /**
+     * 根据传递过来的输入将表情文字转换成字符样式
+     *
+     * @param context
+     * @param textView
+     * @param emoticonType
+     * @param source
+     * @return
+     */
     public static SpannableString getEmojiContent(Context context, TextView textView, int emoticonType, String source) {
         SpannableString spannableString = new SpannableString(source);
         Resources res = context.getResources();
@@ -71,6 +82,31 @@ public class EmojiStringUtil {
             }
         }
         return spannableString;
+    }
+
+    /**
+     * 删除最近的一个表情
+     *
+     * @param context
+     * @param textView
+     * @param emoticonType
+     * @param source
+     * @return
+     */
+    public static SpannableString deleteEmojiContent(Context context, TextView textView, int emoticonType, String source) {
+        // 封装正则表达式
+        Resources res = context.getResources();
+        String regexEmotion = "\\[([\u4e00-\u9fa5\\w])+\\]";
+        Pattern patternEmotion = Pattern.compile(regexEmotion);
+        // 将传递过来的String类型转换成有表情的Spannable类型
+        SpannableString spannableString = new SpannableString(source);
+        Matcher matcherEmotion = patternEmotion.matcher(spannableString);
+        // 如果判断到最后的几位是一个表情样式，则需要将最后机会数据清除，之后再去封装
+        if (matcherEmotion.find((source.length() - 9) < 0 ? 0 : (source.length() - 9))) {
+            String subString = source.substring(0, (source.length() - 9) < 0 ? 0 : (source.length() - 9));
+            return getEmojiContent(context,textView,emoticonType,subString);
+        }
+        return null;
     }
 
 }

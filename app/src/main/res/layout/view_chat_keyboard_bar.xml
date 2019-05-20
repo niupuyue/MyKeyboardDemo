@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/llVckbContainer"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="wrap_content"
     android:background="#ffffff"
     android:gravity="center_vertical"
     android:orientation="horizontal">
@@ -34,16 +34,14 @@
         <EditText
             android:id="@+id/cbetCsebInput"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="8dp"
             android:layout_weight="1"
-            android:background="@drawable/chatting_expand_bar_input_bg"
-            android:gravity="center_vertical"
             android:maxLength="1024"
             android:maxLines="4"
             android:minHeight="32dp"
-            android:textSize="12sp"
+            android:textSize="16sp"
             android:visibility="visible" />
 
         <CheckBox

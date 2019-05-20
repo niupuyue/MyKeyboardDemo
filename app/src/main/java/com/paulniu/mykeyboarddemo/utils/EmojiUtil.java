@@ -1,6 +1,8 @@
-package com.paulniu.mykeyboarddemo;
+package com.paulniu.mykeyboarddemo.utils;
 
 import android.support.v4.util.ArrayMap;
+
+import com.paulniu.mykeyboarddemo.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,16 +25,16 @@ public class EmojiUtil {
     static {
         emojiTypeList.add(EMOJI_TYPE_CLASSICS);
         classicsEmoji = new ArrayMap<>();
-        classicsEmoji.put("[emoji0]", R.drawable.aliwx_s001);
-        classicsEmoji.put("[emoji1]", R.drawable.aliwx_s002);
-        classicsEmoji.put("[emoji2]", R.drawable.aliwx_s003);
-        classicsEmoji.put("[emoji3]", R.drawable.aliwx_s004);
-        classicsEmoji.put("[emoji4]", R.drawable.aliwx_s005);
-        classicsEmoji.put("[emoji5]", R.drawable.aliwx_s006);
-        classicsEmoji.put("[emoji6]", R.drawable.aliwx_s007);
-        classicsEmoji.put("[emoji7]", R.drawable.aliwx_s008);
-        classicsEmoji.put("[emoji8]", R.drawable.aliwx_s009);
-        classicsEmoji.put("[emoji9]", R.drawable.aliwx_s010);
+        classicsEmoji.put("[emoji00]", R.drawable.aliwx_s001);
+        classicsEmoji.put("[emoji01]", R.drawable.aliwx_s002);
+        classicsEmoji.put("[emoji02]", R.drawable.aliwx_s003);
+        classicsEmoji.put("[emoji03]", R.drawable.aliwx_s004);
+        classicsEmoji.put("[emoji04]", R.drawable.aliwx_s005);
+        classicsEmoji.put("[emoji05]", R.drawable.aliwx_s006);
+        classicsEmoji.put("[emoji06]", R.drawable.aliwx_s007);
+        classicsEmoji.put("[emoji07]", R.drawable.aliwx_s008);
+        classicsEmoji.put("[emoji08]", R.drawable.aliwx_s009);
+        classicsEmoji.put("[emoji09]", R.drawable.aliwx_s010);
         classicsEmoji.put("[emoji10]", R.drawable.aliwx_s011);
         classicsEmoji.put("[emoji11]", R.drawable.aliwx_s012);
         classicsEmoji.put("[emoji12]", R.drawable.aliwx_s013);
@@ -122,6 +124,8 @@ public class EmojiUtil {
         classicsEmoji.put("[emoji96]", R.drawable.aliwx_s097);
         classicsEmoji.put("[emoji97]", R.drawable.aliwx_s098);
         classicsEmoji.put("[emoji98]", R.drawable.aliwx_s099);
+        classicsEmoji.put("[emoji99]", R.drawable.aliwx_shanchu_nm);
+        classicsEmoji.put("[emoji100]", null);
     }
 
     public static int getEmojiId(int emojiType, String emojiName) {

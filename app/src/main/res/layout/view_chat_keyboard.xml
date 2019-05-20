@@ -15,7 +15,7 @@
         android:id="@+id/rlVckExpandContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:background="#FFFFFF"
         android:visibility="gone" />
 
 </LinearLayout>

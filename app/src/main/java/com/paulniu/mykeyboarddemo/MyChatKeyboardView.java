@@ -13,10 +13,10 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -26,6 +26,11 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.paulniu.mykeyboarddemo.callbacks.MyChatKeyboardClickListener;
+import com.paulniu.mykeyboarddemo.callbacks.OnEmojiClickListener;
+import com.paulniu.mykeyboarddemo.fragments.SmilyFragment;
+import com.paulniu.mykeyboarddemo.utils.EmojiStringUtil;
 
 
 /**
@@ -143,7 +148,7 @@ public class MyChatKeyboardView extends LinearLayout implements View.OnClickList
 
 
     /**
-     * //////////////////////////// 必须要执行的方法 //////////////////////////////////
+     * //////////////////////////// 必须要执行的方法开始 //////////////////////////////////
      */
     /**
      * 设置Activity对象，为了获取当前的FragmentManager
@@ -207,7 +212,7 @@ public class MyChatKeyboardView extends LinearLayout implements View.OnClickList
         }
     }
     /**
-     * //////////////////////////// 必须要执行的方法  //////////////////////////////////
+     * //////////////////////////// 必须要执行的方法结束  //////////////////////////////////
      */
 
     /**
@@ -439,7 +444,7 @@ public class MyChatKeyboardView extends LinearLayout implements View.OnClickList
     }
 
     /**
-     * //////////////////////////////////////////// 表情和更多 复选按钮选中事件 开始 ////////////////////////////////////////////////
+     * //////////////////////////////////////////// 表情和更多 复选按钮选中事件 结束 ////////////////////////////////////////////////
      */
 
     @Override
@@ -447,6 +452,12 @@ public class MyChatKeyboardView extends LinearLayout implements View.OnClickList
         if (view.getId() == R.id.cbetCsebInput) {
             if (motionEvent.getAction() == MotionEvent.ACTION_UP && rlVckExpandContainer != null && rlVckExpandContainer.getVisibility() == VISIBLE) {
                 setFragmentContainerVisiable(false);
+                if (cbCsebSmily != null) {
+                    cbCsebSmily.setChecked(false);
+                }
+                if (cbCsebMore != null) {
+                    cbCsebMore.setChecked(false);
+                }
             }
         }
         return false;
@@ -503,9 +514,19 @@ public class MyChatKeyboardView extends LinearLayout implements View.OnClickList
         if (cbetCsebInput != null) {
             int curPosition = cbetCsebInput.getSelectionStart();
             StringBuilder sb = new StringBuilder(cbetCsebInput.getText().toString());
-            sb.insert(curPosition, emojiName);
-            cbetCsebInput.setText(EmojiStringUtil.getEmojiContent(mContext, cbetCsebInput, emojiType, sb.toString()));
-            cbetCsebInput.setSelection(curPosition + emojiName.length());
+            if (emojiName.equalsIgnoreCase("[emoji99]")) {
+                // 模拟软键盘删除按钮删除按钮
+                int keyCode = KeyEvent.KEYCODE_DEL;
+                KeyEvent keyEventDown = new KeyEvent(KeyEvent.ACTION_DOWN, keyCode);
+                KeyEvent keyEventUp = new KeyEvent(KeyEvent.ACTION_UP, keyCode);
+                cbetCsebInput.onKeyDown(keyCode, keyEventDown);
+                cbetCsebInput.onKeyUp(keyCode, keyEventUp);
+            } else {
+                sb.insert(curPosition, emojiName);
+                cbetCsebInput.setText(EmojiStringUtil.getEmojiContent(mContext, cbetCsebInput, emojiType, sb.toString()));
+                cbetCsebInput.setSelection(curPosition + emojiName.length());
+            }
+
         }
     }
 
@@ -521,12 +542,12 @@ public class MyChatKeyboardView extends LinearLayout implements View.OnClickList
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.tvVckbPhrase:
+            case R.id.tvVckbPhrase:// 常用语
                 if (this.mListener != null) {
                     this.mListener.choosePhrase();
                 }
                 break;
-            case R.id.btnCsebSendBtn:
+            case R.id.btnCsebSendBtn:// 发送按钮
                 if (this.mListener != null) {
                     this.mListener.sendMessage();
                     // 发送之后将输入框内容清空

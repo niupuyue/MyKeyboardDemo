@@ -5,6 +5,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ScrollView;
 
+import com.paulniu.mykeyboarddemo.callbacks.MyChatKeyboardClickListener;
+import com.paulniu.mykeyboarddemo.fragments.ExpandFragment;
+import com.paulniu.mykeyboarddemo.fragments.SmilyFragment;
+import com.paulniu.mykeyboarddemo.utils.EmojiUtil;
+
 public class MainActivity extends AppCompatActivity implements MyChatKeyboardClickListener {
 
     private MyChatKeyboardView chatkeyboard;
@@ -17,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements MyChatKeyboardCli
         scroll = findViewById(R.id.scroll);
         chatkeyboard = findViewById(R.id.chatkeyboard);
         chatkeyboard.setData(this, this, scroll);
-        chatkeyboard.setSmilyFragment(SmilyFragment.getInstance(SmilyFragment.RECYCLER_VIEW_SPAN_COUNT));
+        chatkeyboard.setSmilyFragment(SmilyFragment.getInstance(EmojiUtil.EMOJI_TYPE_CLASSICS));
         chatkeyboard.setExpandFragment(ExpandFragment.getInstance());
     }
 
