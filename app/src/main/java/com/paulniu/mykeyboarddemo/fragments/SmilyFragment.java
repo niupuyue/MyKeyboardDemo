@@ -1,5 +1,6 @@
 package com.paulniu.mykeyboarddemo.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,6 +9,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.paulniu.mykeyboarddemo.adapter.SmilyViewPagerAdapter;
 import com.paulniu.mykeyboarddemo.callbacks.OnEmojiClickListener;
@@ -43,6 +46,7 @@ public class SmilyFragment extends Fragment {
     private List<EmojiModel> emojiList;
     public static final int RECYCLER_VIEW_SPAN_COUNT = 7;
     private ViewPager vpfsEmojiContanier;
+    private LinearLayout llFsDot;
     private OnEmojiClickListener mEmojiClickListener;
 
     private SmilyDetailPagerFragment fragment1;
@@ -50,6 +54,8 @@ public class SmilyFragment extends Fragment {
     private SmilyDetailPagerFragment fragment3;
     private SmilyDetailPagerFragment fragment4;
     private List<Fragment> fragments = new ArrayList<>();
+
+    private List<ImageView> imageDots = new ArrayList<>();
 
     @Nullable
     @Override
@@ -70,6 +76,7 @@ public class SmilyFragment extends Fragment {
     private void initLayoutById(View root) {
         if (root != null) {
             vpfsEmojiContanier = root.findViewById(R.id.vpfsEmojiContanier);
+            llFsDot = root.findViewById(R.id.llFsDot);
         }
     }
 
@@ -102,7 +109,7 @@ public class SmilyFragment extends Fragment {
         if (vpfsEmojiContanier != null) {
             vpfsEmojiContanier.setAdapter(new SmilyViewPagerAdapter(getChildFragmentManager(), fragments));
             vpfsEmojiContanier.setCurrentItem(0);
-            vpfsEmojiContanier.setOnPageChangeListener(new MyPagerChangeListener());
+            vpfsEmojiContanier.setOnPageChangeListener(new MyPagerChangeListener(getContext(), llFsDot, fragments.size()));
         }
         List<EmojiModel> tempEmoji1 = new ArrayList<>();
         List<EmojiModel> tempEmoji2 = new ArrayList<>();
@@ -138,6 +145,41 @@ public class SmilyFragment extends Fragment {
      */
     public class MyPagerChangeListener implements ViewPager.OnPageChangeListener {
 
+        private int mPageCount;
+        private LinearLayout mLlFsDots;
+        private Context mContext;
+        private List<ImageView> mImageDots;
+        private int img_select;
+        private int img_unSelect;
+
+        final int imageSize = 10;
+
+        public MyPagerChangeListener(Context context, LinearLayout llFsDots, int pageCount) {
+            this.mPageCount = pageCount;
+            this.mContext = context;
+            this.mLlFsDots = llFsDots;
+            this.mImageDots = new ArrayList<>();
+            img_select = R.drawable.smily_viewpager_dot_selected;
+            img_unSelect = R.drawable.smily_viewpager_dot_unselected;
+            for (int i = 0; i < mPageCount; i++) {
+                ImageView imageView = new ImageView(mContext);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(new ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                params.leftMargin = 10;
+                params.rightMargin = 10;
+                params.height = imageSize;
+                params.width = imageSize;
+                if (i == 0) {
+                    imageView.setBackgroundResource(img_select);
+                } else {
+                    imageView.setBackgroundResource(img_unSelect);
+                }
+                imageView.setLayoutParams(params);
+                mLlFsDots.addView(imageView);
+                mImageDots.add(imageView);
+            }
+        }
+
         @Override
         public void onPageScrollStateChanged(int arg0) {
         }
@@ -147,14 +189,14 @@ public class SmilyFragment extends Fragment {
         }
 
         @Override
-        public void onPageSelected(int arg0) {
-            switch (arg0) {
-                case 0:
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
+        public void onPageSelected(int position) {
+            for (int i = 0; i < mPageCount; i++) {
+                //选中的页面改变小圆点为选中状态，反之为未选中
+                if ((position % mPageCount) == i) {
+                    (mImageDots.get(i)).setBackgroundResource(img_select);
+                } else {
+                    (mImageDots.get(i)).setBackgroundResource(img_unSelect);
+                }
             }
         }
     }

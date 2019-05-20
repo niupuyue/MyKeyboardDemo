@@ -62,12 +62,12 @@ public class SmilyDetailPagerFragment extends Fragment implements EmojiViewHolde
 
     private void initDataAfterInitLayout() {
         if (emojiModels != null && emojiModels.size() > 0) {
-            if (emojiModels.size() != 27) {
-                for (int i = 0; i < 27 - emojiModels.size(); i++) {
-                    EmojiModel emojiModelEmpty = new EmojiModel("[emoji100]", R.drawable.aliwx_shanchu_nm);
-                    emojiModels.add(emojiModelEmpty);
-                }
-            }
+//            if (emojiModels.size() != 27) {
+//                for (int i = 0; i < 27 - emojiModels.size(); i++) {
+//                    EmojiModel emojiModelEmpty = new EmojiModel("[emoji100]", R.drawable.aliwx_shanchu_nm);
+//                    emojiModels.add(emojiModelEmpty);
+//                }
+//            }
             // 需要创建删除表情按钮
             EmojiModel emojiModelDelete = new EmojiModel("[emoji99]", R.drawable.aliwx_shanchu_nm);
             emojiModels.add(emojiModelDelete);
