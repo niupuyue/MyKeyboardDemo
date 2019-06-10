@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary.events;
+package com.paulniu.panllibrary.imchat.events;
 
 /**
  * Coder: niupuyue

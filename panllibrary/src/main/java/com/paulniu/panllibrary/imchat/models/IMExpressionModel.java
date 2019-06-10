@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary.models;
+package com.paulniu.panllibrary.imchat.models;
 
 /**
  * 表情model

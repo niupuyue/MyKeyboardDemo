@@ -1,8 +1,8 @@
-package com.paulniu.panllibrary;
+package com.paulniu.panllibrary.imchat;
 
 import android.content.Context;
 
-import com.paulniu.panllibrary.callbacks.IMRecordPlayerCallback;
+import com.paulniu.panllibrary.imchat.callbacks.IMRecordPlayerCallback;
 
 
 /**

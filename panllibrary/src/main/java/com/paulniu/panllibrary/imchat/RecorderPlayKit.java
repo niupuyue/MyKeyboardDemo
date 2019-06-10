@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary;
+package com.paulniu.panllibrary.imchat;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -13,9 +13,6 @@ import android.text.TextUtils;
 
 import com.danikula.videocache.CacheListener;
 import com.danikula.videocache.HttpProxyCacheServer;
-import com.paulniu.panllibrary.callbacks.IMRecordPlayerCallback;
-import com.paulniu.panllibrary.utils.UtilityRecordCache;
-import com.paulniu.panllibrary.utils.UtilitySecurity;
 
 import java.io.File;
 

@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary.fragments;
+package com.paulniu.panllibrary.imchat.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

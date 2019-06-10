@@ -5,11 +5,11 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ScrollView;
 
-import com.paulniu.panllibrary.IMChatPanelView;
-import com.paulniu.panllibrary.IMRecordingStateView;
-import com.paulniu.panllibrary.callbacks.IMChatSendMessageCallback;
-import com.paulniu.panllibrary.callbacks.IMRecordingStateChangeCallback;
-import com.paulniu.panllibrary.events.OnSendVoiceEvent;
+import com.paulniu.panllibrary.imchat.IMChatPanelView;
+import com.paulniu.panllibrary.imchat.IMRecordingStateView;
+import com.paulniu.panllibrary.imchat.callbacks.IMChatSendMessageCallback;
+import com.paulniu.panllibrary.imchat.callbacks.IMRecordingStateChangeCallback;
+import com.paulniu.panllibrary.imchat.events.OnSendVoiceEvent;
 
 import java.util.List;
 

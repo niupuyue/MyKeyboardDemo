@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary.adapter;
+package com.paulniu.panllibrary.imchat.adapter;
 
 import android.graphics.Bitmap;
 import android.support.annotation.DrawableRes;

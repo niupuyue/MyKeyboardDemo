@@ -1,7 +1,7 @@
-package com.paulniu.panllibrary.callbacks;
+package com.paulniu.panllibrary.imchat.callbacks;
 
 
-import com.paulniu.panllibrary.events.OnSendVoiceEvent;
+import com.paulniu.panllibrary.imchat.events.OnSendVoiceEvent;
 
 /**
  * Desc:改变语音播放状态回调

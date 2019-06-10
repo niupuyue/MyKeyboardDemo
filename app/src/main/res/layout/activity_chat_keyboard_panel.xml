@@ -19,17 +19,17 @@
 
     </ScrollView>
 
-    <com.paulniu.panllibrary.IMChatPanelView
+    <com.paulniu.panllibrary.imchat.IMChatPanelView
         android:id="@+id/chatpanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true" />
 
-    <com.paulniu.panllibrary.IMRecordingStateView
+    <com.paulniu.panllibrary.imchat.IMRecordingStateView
         android:id="@+id/recordingstate"
         android:layout_width="106dp"
         android:layout_height="106dp"
         android:layout_centerInParent="true"
-        android:visibility="visible"></com.paulniu.panllibrary.IMRecordingStateView>
+        android:visibility="visible"></com.paulniu.panllibrary.imchat.IMRecordingStateView>
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary.fragments;
+package com.paulniu.panllibrary.imchat.fragments;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -9,9 +9,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.paulniu.panllibrary.R;
-import com.paulniu.panllibrary.adapter.IMChatKeyboardSmilyViewPagerAdapter;
-import com.paulniu.panllibrary.callbacks.IMChatEmojiClickCallback;
-import com.paulniu.panllibrary.models.IMExpressionModel;
+import com.paulniu.panllibrary.imchat.adapter.IMChatKeyboardSmilyViewPagerAdapter;
+import com.paulniu.panllibrary.imchat.callbacks.IMChatEmojiClickCallback;
+import com.paulniu.panllibrary.imchat.models.IMExpressionModel;
 import com.paulniu.panllibrary.utils.UtilityExpression;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary.fragments;
+package com.paulniu.panllibrary.imchat.fragments;
 
 import android.Manifest;
 import android.app.Activity;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.paulniu.panllibrary.R;
-import com.paulniu.panllibrary.callbacks.IMChatSendMessageCallback;
-import com.paulniu.panllibrary.callbacks.IMShowRecordViewCallback;
+import com.paulniu.panllibrary.imchat.callbacks.IMChatSendMessageCallback;
+import com.paulniu.panllibrary.imchat.callbacks.IMShowRecordViewCallback;
 import com.paulniu.panllibrary.utils.CheckRecordPermission;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 

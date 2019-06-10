@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary;
+package com.paulniu.panllibrary.imchat;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -27,16 +27,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.paulniu.panllibrary.callbacks.IMChatEmojiClickCallback;
-import com.paulniu.panllibrary.callbacks.IMChatSendMessageCallback;
-import com.paulniu.panllibrary.callbacks.IMRecordingStateChangeCallback;
-import com.paulniu.panllibrary.callbacks.IMShowRecordViewCallback;
-import com.paulniu.panllibrary.fragments.IMChatKeyboardExpandFragment;
-import com.paulniu.panllibrary.fragments.IMChatKeyboardRecorderFragment;
-import com.paulniu.panllibrary.fragments.IMChatKeyboardSmilyFragment;
-import com.paulniu.panllibrary.utils.EditSharedPreferences;
-import com.paulniu.panllibrary.utils.ScreenUtil;
-import com.paulniu.panllibrary.utils.UtilityExpression;
+import com.paulniu.panllibrary.R;
 
 import org.greenrobot.eventbus.EventBus;
 

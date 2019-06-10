@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary.adapter;
+package com.paulniu.panllibrary.imchat.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,8 +7,8 @@ import android.support.annotation.NonNull;
 
 
 import com.paulniu.panllibrary.R;
-import com.paulniu.panllibrary.fragments.IMChatKeyboardSmilyFragment;
-import com.paulniu.panllibrary.models.IMExpressionModel;
+import com.paulniu.panllibrary.imchat.fragments.IMChatKeyboardSmilyFragment;
+import com.paulniu.panllibrary.imchat.models.IMExpressionModel;
 import com.paulniu.panllibrary.utils.ScreenUtil;
 
 import java.util.List;

@@ -1,6 +1,5 @@
 package com.paulniu.panllibrary.utils;
 
-import android.content.Context;
 import android.os.Environment;
 
 import java.io.File;

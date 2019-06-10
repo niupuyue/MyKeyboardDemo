@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary.fragments;
+package com.paulniu.panllibrary.imchat.fragments;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -11,11 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.paulniu.panllibrary.R;
-import com.paulniu.panllibrary.RecorderKit;
-import com.paulniu.panllibrary.callbacks.IMChatSendMessageCallback;
-import com.paulniu.panllibrary.callbacks.IMRecorderKitCallback;
-import com.paulniu.panllibrary.callbacks.IMRecordingStateChangeCallback;
-import com.paulniu.panllibrary.events.OnSendVoiceEvent;
+import com.paulniu.panllibrary.imchat.RecorderKit;
+import com.paulniu.panllibrary.imchat.callbacks.IMChatSendMessageCallback;
+import com.paulniu.panllibrary.imchat.callbacks.IMRecorderKitCallback;
+import com.paulniu.panllibrary.imchat.callbacks.IMRecordingStateChangeCallback;
+import com.paulniu.panllibrary.imchat.events.OnSendVoiceEvent;
 import com.paulniu.panllibrary.utils.UtilitySecurity;
 
 import java.io.File;

@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary.callbacks;
+package com.paulniu.panllibrary.imchat.callbacks;
 
 /**
  * Desc:表情点击事件

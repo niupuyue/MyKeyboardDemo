@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary.callbacks;
+package com.paulniu.panllibrary.imchat.callbacks;
 
 import java.util.List;
 

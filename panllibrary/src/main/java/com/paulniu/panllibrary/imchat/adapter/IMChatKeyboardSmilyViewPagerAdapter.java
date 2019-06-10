@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary.adapter;
+package com.paulniu.panllibrary.imchat.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

@@ -1,11 +1,11 @@
-package com.paulniu.panllibrary;
+package com.paulniu.panllibrary.imchat;
 
 import android.media.MediaRecorder;
 import android.os.Handler;
 import android.os.HandlerThread;
 
 
-import com.paulniu.panllibrary.callbacks.IMRecorderKitCallback;
+import com.paulniu.panllibrary.imchat.callbacks.IMRecorderKitCallback;
 import com.paulniu.panllibrary.utils.UtilityFile;
 
 import java.io.File;

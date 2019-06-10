@@ -1,4 +1,4 @@
-package com.paulniu.panllibrary.callbacks;
+package com.paulniu.panllibrary.imchat.callbacks;
 
 /**
  * Desc:录音状态回调
