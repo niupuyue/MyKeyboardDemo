@@ -7,22 +7,16 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:id="@+id/scroll"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></LinearLayout>
-
-    </ScrollView>
-
-    <com.paulniu.mykeyboarddemo.MyChatKeyboardView
-        android:id="@+id/chatkeyboard"
+    <Button
+        android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"></com.paulniu.mykeyboarddemo.MyChatKeyboardView>
+        android:text="聊天键盘" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义键盘/安全键盘/数字键盘" />
 
 </LinearLayout>
