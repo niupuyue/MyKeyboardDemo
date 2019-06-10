@@ -28,6 +28,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.paulniu.panllibrary.R;
+import com.paulniu.panllibrary.imchat.callbacks.IMChatEmojiClickCallback;
+import com.paulniu.panllibrary.imchat.callbacks.IMChatSendMessageCallback;
+import com.paulniu.panllibrary.imchat.callbacks.IMRecordingStateChangeCallback;
+import com.paulniu.panllibrary.imchat.callbacks.IMShowRecordViewCallback;
+import com.paulniu.panllibrary.imchat.fragments.IMChatKeyboardExpandFragment;
+import com.paulniu.panllibrary.imchat.fragments.IMChatKeyboardRecorderFragment;
+import com.paulniu.panllibrary.imchat.fragments.IMChatKeyboardSmilyFragment;
+import com.paulniu.panllibrary.utils.EditSharedPreferences;
+import com.paulniu.panllibrary.utils.ScreenUtil;
+import com.paulniu.panllibrary.utils.UtilityExpression;
 
 import org.greenrobot.eventbus.EventBus;
 

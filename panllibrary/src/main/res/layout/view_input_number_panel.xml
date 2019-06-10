@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/inputnumber_key_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white">
+
+        <TextView
+            android:id="@+id/inputnumber_key_top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="8dp"
+            android:paddingTop="15dp"
+            android:text="备注："
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/inputnumber_key_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/inputnumber_key_number"
+            android:layout_toRightOf="@id/inputnumber_key_top_title"
+            android:background="@null"
+            android:hint="点击写备注"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:textColorHint="@color/color_input_text_gray"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/inputnumber_key_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:focusable="false"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="8dp"
+            android:text="0.00"
+            android:paddingTop="12dp"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+    <com.paulniu.panllibrary.number.InputNumberView
+        android:id="@+id/inputNumberView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputnumber_key_top" />
+
+</RelativeLayout>
